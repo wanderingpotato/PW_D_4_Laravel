@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('CheckIn');
             $table->date('CheckOut');
             $table->enum('Status',['Booked','CheckedIn','CheckedOut']);
+            $table->double('total_harga');
+            $table->double('diskon');
             $table->timestamps();
         });
     }

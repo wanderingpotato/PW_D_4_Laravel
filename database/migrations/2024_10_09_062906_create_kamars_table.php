@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kamars', function (Blueprint $table) {
             $table->integer('id_kamar')->primary();
             $table->string('id_jenises');
+            $table->enum('Status',['Booked','Available','Maintenence']);
             $table->foreign('id_jenises')->references('id_jenis')->on('jenis_kamars')->onDelete('cascade');
             $table->integer('lantai');
             $table->timestamps();

@@ -15,7 +15,10 @@ return new class extends Migration
             $table->string('id_service')->primary();
             $table->text('deskripsi');
             $table->string('nama');
+            $table->string('namaIcon');
             $table->double('harga');
+            $table->boolean('tipe');
+            $table->text('ServiceOverview');
             $table->timestamps();
         });
     }

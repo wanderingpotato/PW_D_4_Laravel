@@ -17,7 +17,9 @@ return new class extends Migration
             $table->double('harga');
             $table->integer('kapasitas');
             $table->string('nama');
-
+            $table->string('tipe');
+            $table->text('KamarOverview');
+            $table->text('Deskripsi');
             $table->timestamps();
         });
     }

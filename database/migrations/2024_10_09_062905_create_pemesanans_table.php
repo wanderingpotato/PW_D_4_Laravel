@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pembayarans', function (Blueprint $table) {
-            $table->string('id_pembayaran')->primary();
-            $table->string('id_bookings');
-            $table->foreign('id_bookings')->references('id_booking')->on('bookings')->onDelete('cascade');
+        Schema::create('pemesanans', function (Blueprint $table) {
+            $table->string('id_pemesanan')->primary();
+            $table->string('id_users');
+            $table->foreign('id_users')->references('id_user')->on('users')->onDelete('cascade');
+            $table->date('Tgl_pemesanan');
+            $table->enum('Status',['Booked','Canceled','Done']);
             $table->double('total_harga');
             $table->double('diskon');
-            
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pembayarans');
+        Schema::dropIfExists('pemesanans');
     }
 };

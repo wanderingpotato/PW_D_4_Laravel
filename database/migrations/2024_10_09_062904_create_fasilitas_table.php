@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('id_fasilitas')->primary();
             $table->text('deskripsi');
             $table->string('nama');
+            $table->string('namaIcon');
             $table->timestamps();
         });
     }
