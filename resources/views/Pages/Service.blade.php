@@ -3,17 +3,7 @@
 @section('title', 'Service')
 
 @section('content')
-<style>
-	.container-image2 {
-		position: relative;
-		width: 70%;
-		height: 30rem;
-	}
 
-	.bg-us {
-		background-color: #1EB7AF;
-	}
-</style>
 <div class="">
 	<div class="position-relative">
 		<img src="{{asset('images/images.jpg')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid " style="width: 100%; height: 70vh; filter: brightness(50%)">

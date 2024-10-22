@@ -3,13 +3,6 @@
 @section('title', 'Homepage')
 
 @section('content')
-<style>
-	.carousel-caption {
-		width: 30vw;
-		bottom: 30vh;
-		text-align: start;
-	}
-</style>
 <div class="">
 	<!-- Carousel -->
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">

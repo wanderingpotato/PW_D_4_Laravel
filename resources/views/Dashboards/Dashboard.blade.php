@@ -3,13 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<style>
-	.table {
-		border-collapse: separate;
-		border-spacing: 0 15px;
-		margin-bottom: 0;
-	}
-</style>
+
 <div class="">
 	<div class="row ">
 		<div class="col-3">

@@ -3,13 +3,6 @@
 @section('title', 'Profile')
 
 @section('contentUser')
-<style>
-	.table {
-		border-collapse: separate;
-		border-spacing: 0 15px;
-		margin-bottom: 0;
-	}
-</style>
 <div class="container">
 	<div class="col-12">
 		<div class="card mb-3 w-100 px-5 py-3">

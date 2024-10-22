@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="lignt">
 
 <head>
 	<meta charset="UTF-8">
@@ -8,73 +8,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
-	<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
-<style>
-	.btn-info {
-		background-color: #1EB7AF;
-	}
-
-	.divider {
-		width: 10%;
-		height: 2.5px;
-		opacity: 50%;
-		border-radius: 20px;
-		background-color: #1EB7AF;
-	}
-
-	.container-image {
-		position: relative;
-		width: 65%;
-		/* Adjust as needed */
-		height: 30rem;
-		/* Adjust as needed */
-	}
-	
-
-	.container-image::before {
-		content: '';
-		position: absolute;
-		width: 50%;
-		height: 35%;
-		border-bottom: 10px solid #1EB7AF;
-		border-right: 10px solid #1EB7AF;
-		bottom: -20px;
-		right: -20px;
-		z-index: 10;
-	}
-
-	.container-image::after {
-		content: '';
-		position: absolute;
-		width: 50%;
-		height: 35%;
-		border-top: 10px solid #1EB7AF;
-		border-left: 10px solid #1EB7AF;
-		top: -20px;
-		left: -20px;
-	}
-
-	.images {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-	}
-
-	.scrolled {
-		background-color: #333;
-		/* Change to your desired color */
-		color: black;
-		transition: background-color 200ms linear;
-	}
-	.active>.page-link{
-		background-color: #1EB7AF;
-		color: white!important;
-	}
-</style>
-
 <body>
 	<nav id="navbar" class="navbar navbar-expand-lg py-3 fixed-top bg-body-transparent text-white navbar-dark">
 		<div class="container-fluid px-5">
@@ -88,7 +23,7 @@
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto nav-underline">
 					<li class="nav-item">
-						<a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}"   href="{{url('/')}}">Home</a>
+						<a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{url('/')}}">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link {{ (request()->is('Rooms')) ? 'active' : '' }}" href="{{url('Rooms')}}">Rooms</a>
@@ -100,7 +35,16 @@
 						<a class="nav-link {{ (request()->is('About')) ? 'active' : '' }}" href="{{url('About')}}">About</a>
 					</li>
 				</ul>
-				<div class="">
+				<div class="d-flex align-items-center">
+					<div class="one-quarter me-4" id="switch">
+						<input type="checkbox" class="checkbox" id="chk" aria-labelledby="bd-color-mode" role="switch"
+							id="flexSwitchCheckChecked" 
+							checked
+							onclick="ToggleSwitch()" />
+						<label class="label" for="chk">
+							<div class="ball"></div>
+						</label>
+					</div>
 					<a href="{{url('Login')}}" class=""><button class="btn btn-outline-light px-5 py-2">Login</button></a>
 				</div>
 			</div>
@@ -117,7 +61,7 @@
 				<div class="row mt-3">
 					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 						<h6 class="fs-5 fw-bold mb-4">
-						<img src="{{asset('Logo.svg')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">AtmaHotel
+							<img src="{{asset('Logo.svg')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">AtmaHotel
 						</h6>
 						<p>
 							Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -164,17 +108,7 @@
 			Copyright ©2024 All right reverved to kelompok 4
 		</div>
 	</footer>
-	<script>
-		const navbar = document.getElementById('navbar');
-
-		window.addEventListener('scroll', () => {
-			if (window.scrollY > 50) { // Adjust this value based on when you want the color to change
-				navbar.classList.add('scrolled');
-			} else {
-				navbar.classList.remove('scrolled');
-			}
-		});
-	</script>
+	<script src="{{ asset('js/Script.js') }}"></script>
 </body>
 
 </html>

@@ -7,17 +7,6 @@
 
 @foreach($Service as $Services)
 @if($Services['Id']==$ServiceId)
-<style>
-	.container-image2 {
-		position: relative;
-		width: 100%;
-		height: 30rem;
-	}
-
-	.bg-us {
-		background-color: #1EB7AF;
-	}
-</style>
 
 <div class="">
 	<div class="position-relative">
