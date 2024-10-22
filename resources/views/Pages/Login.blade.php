@@ -15,7 +15,7 @@
 			<h2 class="display-5 fw-bold">Welcome to AtmaHotel</h2>
 			<p class="fw-light" style="opacity: 70%;">Log In to your account</p>
 		</div>
-		<form class="mt-5 mx-5">
+		<form class="mt-5 mx-5" action="{{url('Profile')}}">
 			<div class="mb-3">
 				<label for="formGroupExampleInput" class="form-label fw-bold fs-5 mt-3">Username</label>
 				<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="formGroupExampleInput" placeholder="Input Your Username.....">
