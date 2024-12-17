@@ -17,8 +17,8 @@ User :
 - 123456789
 
 ## Bonus Yang Di ambil
-Hosting :
--
+Hosting:
+
 Route API:
 karena minta semuanya yaudah
 -  Post /api/register - register pengguna
