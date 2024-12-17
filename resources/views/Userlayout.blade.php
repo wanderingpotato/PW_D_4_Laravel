@@ -30,7 +30,9 @@
 					</div>
 					<div class="card mt-5" style="width: 20rem;">
 						<div class="card-body px-5 py-3">
-							<a href="{{url('Logout')}}" class=" w-100 shadow mt-2 px-5  py-2 btn  {{ (request()->is('Logout')) ? 'btn-info text-white border-white' : '  border-info text-black' }}">
+							<a href="javascript:void(0)"
+								onclick="logout()"
+								class="w-100 shadow mt-2 px-5 py-2 btn {{ (request()->is('Logout')) ? 'btn-info text-white border-white' : 'border-info text-black' }}">
 								Log Out
 							</a>
 							<p><i class="fa-solid fa-circle-exclamation me-3 mt-5"></i>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec </p>
@@ -44,5 +46,28 @@
 		</div>
 	</div>
 </div>
+<script>
+	function logout() {
+		const token = localStorage.getItem('token');
+		if (token) {
+			axios.post('/api/logout', {}, {
+					headers: {
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(() => {
+					localStorage.removeItem('token');
+					window.location.href = '/Login';
+				})
+				.catch(error => {
+					console.error('Error during logout:', error);
 
+					localStorage.removeItem('token');
+					window.location.href = '/Login';
+				});
+		} else {
+			window.location.href = '/Login';
+		}
+	}
+</script>
 @endsection

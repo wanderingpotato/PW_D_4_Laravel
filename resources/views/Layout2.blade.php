@@ -24,13 +24,13 @@
 			<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="{{asset('images/images.jpg')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.jpg')}}">
+						<img src="{{asset('images/Hotel-10.png')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.png')}}">
 					</div>
 					<div class="carousel-item">
-						<img src="{{asset('images/images.jpg')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.jpg')}}">
+						<img src="{{asset('images/Hotel-9.png')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.png')}}">
 					</div>
 					<div class="carousel-item">
-						<img src="{{asset('images/images.jpg')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.jpg')}}">
+						<img src="{{asset('images/Hotel-2.png')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.png')}}">
 					</div>
 				</div>
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

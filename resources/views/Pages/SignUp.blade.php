@@ -15,22 +15,22 @@
 			<h2 class="display-5 fw-bold">Welcome to AtmaHotel</h2>
 			<p class="fw-light" style="opacity: 70%;">Register your account</p>
 		</div>
-		<form class="mt-2 mx-5" action="{{url('Dashboard')}}">
+		<form class="mt-2 mx-5" id="registerForm">
 			<div class="mb-3">
-				<label for="formGroupExampleInput" class="form-label fw-bold fs-5 ">Username</label>
-				<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="formGroupExampleInput" placeholder="Input Your Username.....">
+				<label for="username" class="form-label fw-bold fs-5">Username</label>
+				<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="username" name="name" placeholder="Input Your Username.....">
 			</div>
 			<div class="mb-3">
-				<label for="formGroupExampleInput" class="form-label fw-bold fs-5 ">Phone Number</label>
-				<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="formGroupExampleInput" placeholder="Input Your Phone Number.....">
+				<label for="phoneNumber" class="form-label fw-bold fs-5">Phone Number</label>
+				<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="phoneNumber" name="noTelp" placeholder="Input Your Phone Number.....">
 			</div>
 			<div class="mb-3">
-				<label for="formGroupExampleInput" class="form-label fw-bold fs-5 ">Email</label>
-				<input type="Email" class="form-control p-3 border-info rounded-3 shadow" id="formGroupExampleInput" placeholder="Input Your Email.....">
+				<label for="email" class="form-label fw-bold fs-5">Email</label>
+				<input type="email" class="form-control p-3 border-info rounded-3 shadow" id="email" name="email" placeholder="Input Your Email.....">
 			</div>
 			<div class="mb-3">
-				<label for="formGroupExampleInput2" class="form-label fw-bold fs-5 ">Password</label>
-				<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="formGroupExampleInput2" placeholder="Input Your Password.....">
+				<label for="password" class="form-label fw-bold fs-5">Password</label>
+				<input type="password" class="form-control p-3 border-info rounded-3 shadow" id="password" name="password" placeholder="Input Your Password.....">
 			</div>
 			<button type="submit" class="btn btn-info text-white py-2 px-5 mt-4">Sign Up</button>
 		</form>
@@ -45,5 +45,51 @@
 	</div>
 
 </div>
-
+<script>
+	document.getElementById('registerForm').addEventListener('submit', function(e) {
+		const formData = new FormData(this);
+		fetch('/api/register', {
+				method: 'POST',
+				body: formData,
+			})
+			.then(response => response.json())
+			.then(data => {
+				if (data.message === 'Register Success') {
+					console.log('Registration successful!');
+					const email = document.getElementById('email').value;
+					const password = document.getElementById('password').value;
+					fetch('/api/login', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify({
+								email: email,
+								password: password
+							})
+						})
+						.then(response => response.json())
+						.then(data => {
+							if (data.access_token) {
+								localStorage.setItem('token', data.access_token);
+								console.log('Login successful!');
+								if (data.user.role == 0) {
+									window.location.href = '/';
+								} else {
+									window.location.href = '/Dashboard';
+								}
+							} else {
+								console.log(data.message || 'Login failed!');
+							}
+						})
+						.catch(error => console.error('Error:', error));
+				} else {
+					console.log('Error: ' + data.message);
+				}
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
+	});
+</script>
 @endsection

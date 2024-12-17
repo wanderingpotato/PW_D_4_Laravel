@@ -15,21 +15,21 @@
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 
-				<img src="{{asset('images/images.jpg')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.jpg')}}">
+				<img src="{{asset('images/Hotel-5.png')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/Hotel-.png')}}">
 				<div class="carousel-caption d-none d-md-block text-wrap">
 					<h1 class="display-1 fw-bold">Experience Something New Everyday</h1>
 					<button type="button" class="mt-5 px-5 text-white py-2 btn btn-info">Learn More</button>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="{{asset('images/images.jpg')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.jpg')}}">
+				<img src="{{asset('images/Hotel-6.png')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/Hotel-.png')}}">
 				<div class="carousel-caption d-none d-md-block text-wrap">
 					<h1 class="display-1 fw-bold">See More Shit Everyday</h1>
 					<button type="button" class="mt-5 px-5 text-white py-2 btn btn-info">Learn More</button>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="{{asset('images/images.jpg')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/images.jpg')}}">
+				<img src="{{asset('images/Hotel-7.png')}}" class="object-fit-cover d-block w-100 vh-100 img-fluid" style="filter: brightness(50%)" alt="{{asset('images/Hotel-.png')}}">
 				<div class="carousel-caption d-none d-md-block text-wrap">
 					<h1 class="display-1 fw-bold">Enjoy Your Time Here With US</h1>
 					<button type="button" class="mt-5 px-5 text-white py-2 btn btn-info">Learn More</button>
@@ -70,7 +70,7 @@
 		<div class="row align-items-center">
 			<div class="d-none d-md-block col-md-6">
 				<div class="container-image  mx-auto">
-					<img src="{{asset('images/images.jpg')}}" alt="" class="images object-fit-cover d-block img-fluid ">
+					<img src="{{asset('images/Hotel-4.png')}}" alt="" class="images object-fit-cover d-block img-fluid ">
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
@@ -83,7 +83,7 @@
 	</div>
 	<!-- Our Facilities -->
 	<div class="position-relative mb-5" style="width: 100%; height: 25vh;">
-		<img src="{{asset('images/images.jpg')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid position-absolute" style="width: 100%; height: 25vh;">
+		<img src="{{asset('images/Hotel-3.png')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid position-absolute" style="width: 100%; height: 25vh;">
 		<div class="container">
 			<div class="card position-absolute text-white" style="width:70vh;right: 20vh; bottom: -8vh; background-color: #1EB7AF;">
 				<div class="card-body p-5">
@@ -211,7 +211,7 @@
 	</div>
 	<!-- Divider Footer -->
 	<div class=" position-relative mb-5" style="width: 100%; height: 25vh;">
-		<img src="{{asset('images/images.jpg')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid position-absolute z-0" style="width: 100%; height: 25vh; filter: brightness(50%)">
+		<img src="{{asset('images/Hotel-1.png')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid position-absolute z-0" style="width: 100%; height: 25vh; filter: brightness(50%)">
 		<div class="container-fluid g-0 h-100">
 			<div class="card w-100 bg-transparent rounded-0 border-0 h-100">
 				<div class="card-body">
@@ -239,5 +239,4 @@
 		</div>
 	</div>
 </div>
-
 @endsection

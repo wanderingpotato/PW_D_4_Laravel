@@ -17,7 +17,6 @@ return new class extends Migration
             $table->enum('Status',['Booked','Available','Maintenence']);
             $table->foreign('id_jenises')->references('id_jenis')->on('jenis_kamars')->onDelete('cascade');
             $table->integer('lantai');
-            $table->timestamps();
         });
     }
 

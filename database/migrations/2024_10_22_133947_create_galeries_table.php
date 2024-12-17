@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('galeries', function (Blueprint $table) {
             $table->string('id_image')->primary();
-            $table->string('id_jenises');
+            $table->string('id_jenises')->nullable();
             $table->foreign('id_jenises')->references('id_jenis')->on('jenis_kamars')->onDelete('cascade');
-            $table->string('id_services');
+            $table->string('id_services')->nullable();
             $table->foreign('id_services')->references('id_service')->on('jenis_services')->onDelete('cascade');
             $table->text('foto');
-            $table->timestamps();
         });
     }
 

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreign('id_services')->references('id_service')->on('jenis_services')->onDelete('cascade');
             $table->primary(['id_pemesanan','id_services']);
             $table->integer('Time-Jumlah');
-            $table->timestamps();
         });
     }
 

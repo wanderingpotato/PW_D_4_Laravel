@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('id_fasilitass');
             $table->foreign('id_fasilitass')->references('id_fasilitas')->on('fasilitas')->onDelete('cascade');
             $table->primary(['id_jeniss','id_fasilitass']);
-            $table->timestamps();
         });
     }
 

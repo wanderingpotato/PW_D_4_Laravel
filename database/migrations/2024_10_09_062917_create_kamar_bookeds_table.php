@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreign('id_bookings')->references('id_booking')->on('bookings')->onDelete('cascade');
             $table->integer('id_kamars');
             $table->foreign('id_kamars')->references('id_kamar')->on('kamars')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

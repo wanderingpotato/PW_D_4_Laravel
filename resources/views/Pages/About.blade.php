@@ -8,7 +8,7 @@
 </style>
 <div class="container--fluid">
 	<div class="position-relative">
-		<img src="{{asset('images/images.jpg')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid " style="width: 100%; height: 70vh; filter: brightness(50%)">
+		<img src="{{asset('images/Hotel-6.png')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid " style="width: 100%; height: 70vh; filter: brightness(50%)">
 		<div class="container position-absolute top-50 start-50 translate-middle text-white text-center">
 			<h2 class="display-4 fw-bold">A Small Details About Us</h2>
 			<p class="mt-2">Norem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -19,7 +19,7 @@
 		<div class="row align-items-center">
 			<div class="d-none d-md-block col-md-6">
 				<div class="container-image  mx-auto">
-					<img src="{{asset('images/images.jpg')}}" alt="" class="images object-fit-cover d-block img-fluid ">
+					<img src="{{asset('images/Hotel-4.png')}}" alt="" class="images object-fit-cover d-block img-fluid ">
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
@@ -38,7 +38,7 @@
 		<p class="mt-3 fs-6">Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. </p>
 	</div>
 	<div class=" position-relative mb-5" style="width: 100%; height: 25vh;">
-		<img src="{{asset('images/images.jpg')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid " style="width: 100%; height: 25vh; filter: brightness(50%)">
+		<img src="{{asset('images/Hotel-1.png')}}" alt="" class=" object-fit-cover d-none d-lg-block img-fluid " style="width: 100%; height: 25vh; filter: brightness(50%)">
 		<div class="container-fluid h-100 position-absolute z-0 top-0 align-content-center">
 			<div class=" w-100 bg-transparent ">
 				<div class="text-center text-white">

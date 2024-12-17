@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->string('id_booking')->primary();
-            $table->string('id_users');
+            $table->bigInteger('id_users')->unsigned();
             $table->foreign('id_users')->references('id_user')->on('users')->onDelete('cascade');
             $table->date('CheckIn');
             $table->date('CheckOut');
             $table->enum('Status',['Booked','CheckedIn','CheckedOut']);
             $table->double('total_harga');
             $table->double('diskon');
-            $table->timestamps();
         });
     }
 

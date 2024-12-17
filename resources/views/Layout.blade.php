@@ -10,6 +10,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
+
 <body>
 	<nav id="navbar" class="navbar navbar-expand-lg py-3 fixed-top bg-body-transparent text-white navbar-dark">
 		<div class="container-fluid px-5">
@@ -38,14 +39,19 @@
 				<div class="d-flex align-items-center">
 					<div class="one-quarter me-4" id="switch">
 						<input type="checkbox" class="checkbox" id="chk" aria-labelledby="bd-color-mode" role="switch"
-							id="flexSwitchCheckChecked" 
+							id="flexSwitchCheckChecked"
 							checked
 							onclick="ToggleSwitch()" />
 						<label class="label" for="chk">
 							<div class="ball"></div>
 						</label>
 					</div>
-					<a href="{{url('Login')}}" class=""><button class="btn btn-outline-light px-5 py-2">Login</button></a>
+					<a href="{{url('Login')}}" id="loginButton" class="">
+						<button class="btn btn-outline-light px-5 py-2" id="loginBtn">Login</button>
+					</a>
+					<a href="{{ url('Profile') }}" id="profileLink" style="display: none;">
+						<img src="" alt="Profile Picture" id="profilePic" class="rounded-circle" width="40" height="40">
+					</a>
 				</div>
 			</div>
 		</div>
@@ -110,5 +116,33 @@
 	</footer>
 	<script src="{{ asset('js/Script.js') }}"></script>
 </body>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const token = localStorage.getItem('token');
+		if (token) {
+			fetch('/api/UserData', { 
+					method: 'GET',
+					headers: {
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(response => response.json())
+				.then(data => {
+					if (data.message === "User of "+data.data.name+" Retrieved") {
+						const user = data.data;
+						console.log(user);
+						const profilePicUrl = user.foto==null?"{{asset('images/null.jpg')}}":`/storage/profile/${user.foto}`;
+						document.getElementById('profilePic').src = profilePicUrl;
+						document.getElementById('profileLink').style.display = 'inline-block';
+						document.getElementById('loginButton').style.display = 'none';
+					}
+				})
+				.catch(error => console.error('Error fetching profile:', error));
+		} else {
+			document.getElementById('loginButton').style.display = 'inline-block';
+			document.getElementById('profileLink').style.display = 'none';
+		}
+	});
+</script>
 
 </html>

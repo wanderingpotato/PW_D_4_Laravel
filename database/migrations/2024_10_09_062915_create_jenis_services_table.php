@@ -19,7 +19,6 @@ return new class extends Migration
             $table->double('harga');
             $table->boolean('tipe');
             $table->text('ServiceOverview');
-            $table->timestamps();
         });
     }
 

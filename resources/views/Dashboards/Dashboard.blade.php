@@ -13,7 +13,7 @@
 						<h5 class="card-title">Booked Rooms</h5>
 						<h5 class="card-title"><i class="fa-solid fa-door-open"></i></h5>
 					</div>
-					<h3 class="mb-2 h1  mt-3">{{$Booking}}</h3>
+					<h3 class="mb-2 h1  mt-3" id="BookingText"></h3>
 					<p class="card-text text-body-secondary mt-3">Lorem Ipsum Dor adawa</p>
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 						<h5 class="card-title">Reserved Service</h5>
 						<h5 class="card-title"><i class="fa-solid fa-bell-concierge"></i></h5>
 					</div>
-					<h3 class="mb-2 h1  mt-3">{{$Reservation}}</h3>
+					<h3 class="mb-2 h1  mt-3" id="ReservationText"></h3>
 					<p class="card-text text-body-secondary mt-3">Lorem Ipsum Dor adawa</p>
 				</div>
 			</div>
@@ -39,7 +39,7 @@
 						</div>
 						<div class="col-md-8">
 							<h5 class="card-title ">Users</h5>
-							<h3 class="mb-2 h1 ">{{$Pengguna}}</h3>
+							<h3 class="mb-2 h1 " id="PengggunaText"></h3>
 							<p class="card-text text-body-secondary ">Since Last Week</p>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 	<div class="row mt-2">
 		<div class="col-6">
 			<div class="card w-100">
-			<div class="card-body p-5">
+				<div class="card-body p-5">
 					<h5 class="card-title">Room And Service Popularity</h5>
 					<canvas id="BarRoomService"></canvas>
 				</div>
@@ -73,16 +73,8 @@
 								<th scope="col">Total Harga</th>
 							</tr>
 						</thead>
-						<tbody class="table-group-divider">
-							@foreach($OnGoing as $on)
-							<tr class="mt-5 shadow">
-								<td>{{$on['user']}}</td>
-								<td>{{$on['tipe']}}</td>
-								<td>{{$on['date']}}</td>
-								<td>{{$on['status']}}</td>
-								<td>{{$on['totalharga']}}</td>
-							</tr>
-							@endforeach
+						<tbody class="table-group-divider" id="table-body">
+
 						</tbody>
 					</table>
 				</div>
@@ -150,5 +142,73 @@
 			options: donutOptions
 		});
 	}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+	let perPage = 7;
+	const token = localStorage.getItem('token');
+	function truncate(text, maxLength) {
+		return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+	}
+	function fetchData() {
+		fetch('/api/BookingPesanan', {
+					headers: {
+						'Authorization': `Bearer ${token}`
+					}
+				})
+			.then(response => response.json())
+			.then(data => {
+				const tableBody = document.querySelector('tbody');
+				data.data.forEach(item => {
+					const row = `
+                <tr class="mt-5 shadow">
+                    <td>${item.id_users}</td>
+                    <td>${item.type}</td>
+                    <td>${item.type === 'Booking' ? item.CheckIn : item.Tgl_pemesanan}</td>
+                    <td>${item.Status}</td>
+                    <td>${item.total_harga}</td>
+                </tr>
+            `;
+					tableBody.insertAdjacentHTML('beforeend', row);
+				});
+			})
+			.catch(error => {
+				console.error('Error fetching data:', error);
+			});
+		fetch('/api/Pemesanan/Count')
+			.then(response => response.json())
+			.then(data => {
+				const select = document.getElementById('ReservationText');
+				select.textContent = data.count;
+			})
+			.catch(error => {
+				console.error('Error fetching jenis data:', error);
+			});
+		fetch('/api/Booking/Count')
+			.then(response => response.json())
+			.then(data => {
+				const select = document.getElementById('BookingText');
+				select.textContent = data.count;
+			})
+			.catch(error => {
+				console.error('Error fetching jenis data:', error);
+			});
+		fetch('/api/User/Count', {
+					headers: {
+						'Authorization': `Bearer ${token}`
+					}
+				})
+			.then(response => response.json())
+			.then(data => {
+				const select = document.getElementById('PengggunaText');
+				select.textContent = data.count;
+			})
+			.catch(error => {
+				console.error('Error fetching jenis data:', error);
+			});
+	}
+	document.addEventListener('DOMContentLoaded', () => {
+		fetchData();
+	});
 </script>
 @endsection
