@@ -49,6 +49,7 @@
 			document.getElementById('username').value = data.name;
 			document.getElementById('phoneNumber').value = data.noTelp;
 			document.getElementById('email').value = data.email;
+			document.getElementById('password').value = "";
 		})
 		.catch(error => {
 			console.error('Error fetching data:', error);

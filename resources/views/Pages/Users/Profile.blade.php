@@ -65,7 +65,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script>
 		const token = localStorage.getItem('token');
-
+	
 		function UserData() {
 			axios.get(`/api/UserData`, {
 					headers: {

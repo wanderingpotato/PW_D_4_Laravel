@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2024 at 12:10 AM
+-- Generation Time: Dec 18, 2024 at 02:02 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -50,7 +50,13 @@ INSERT INTO `bookings` (`id_booking`, `id_users`, `CheckIn`, `CheckOut`, `Status
 ('B013', 4, '2024-12-18', '2024-12-19', 'CheckedIn', 119110919.4, 10),
 ('B014', 6, '2024-12-25', '2024-12-26', 'CheckedOut', 11656178.16, 12),
 ('B015', 5, '2024-12-24', '2024-12-20', 'CheckedIn', 108455.6, 12),
-('B016', 9, '2024-12-19', '2024-12-21', 'Booked', 45000, 10);
+('B016', 9, '2024-12-19', '2024-12-21', 'Booked', 45000, 10),
+('B017', 13, '2024-12-18', '2024-12-19', 'Booked', 45000, 10),
+('B018', 15, '2024-12-18', '2024-12-19', 'Booked', 45000, 10),
+('B019', 17, '2024-12-18', '2024-12-20', 'Booked', 45000, 10),
+('B020', 18, '2024-12-18', '2024-12-19', 'Booked', 45000, 10),
+('B021', 6, '2024-12-15', '2024-12-20', 'Booked', 99999.9, 10),
+('B022', 20, '2024-12-18', '2024-12-20', 'Booked', 45000, 10);
 
 -- --------------------------------------------------------
 
@@ -112,7 +118,8 @@ CREATE TABLE `fasilitas` (
 INSERT INTO `fasilitas` (`id_fasilitas`, `deskripsi`, `nama`, `namaIcon`) VALUES
 ('F002', 'agahshagasfsfasfawfa', 'ayam', 'hhhhhhhhhhh'),
 ('F003', 'agahshagasfsfasfawfa', 'api', 'api'),
-('F004', 'afsd', '13243', 'qadsfd');
+('F004', 'afsd', '13243', 'qadsfd'),
+('F005', 'adaw', '1111', 'xawda');
 
 -- --------------------------------------------------------
 
@@ -138,7 +145,8 @@ INSERT INTO `galeries` (`id_image`, `id_jenises`, `id_services`, `foto`) VALUES
 ('G004', NULL, 'JS005', 'TsTJQ17QeNoYN1Yar8XhXOYqqBmMrj2CLv7N83qa.jpg'),
 ('G005', NULL, 'JS005', 'GDYJYgAq5yFLeaKaxpgS5CuHatzOekhEKQojMpQw.jpg'),
 ('G006', NULL, 'JS005', 'xugjWTXmEg5H5FS7Agcp97JrR1IcNv5rcHXF2gq8.jpg'),
-('G007', NULL, 'JS005', 'ujhNkHMRyfFXQK805RykeQgbVbJk4r4XOLRAqmzi.jpg');
+('G007', NULL, 'JS005', 'ujhNkHMRyfFXQK805RykeQgbVbJk4r4XOLRAqmzi.jpg'),
+('G008', NULL, 'JS006', 'xPYDBsofcjHaAODigyoKf4xKNZL85saMvbmdQxgq.png');
 
 -- --------------------------------------------------------
 
@@ -291,7 +299,13 @@ INSERT INTO `kamar_bookeds` (`id_kamar_booked`, `id_bookings`, `id_kamars`) VALU
 ('KB016', 'B012', 19),
 ('KB017', 'B013', 5),
 ('KB019', 'B015', 9),
-('KB020', 'B016', 16);
+('KB020', 'B016', 16),
+('KB021', 'B017', 10),
+('KB022', 'B018', 12),
+('KB023', 'B019', 6),
+('KB024', 'B020', 10),
+('KB025', 'B021', 3),
+('KB026', 'B022', 13);
 
 -- --------------------------------------------------------
 
@@ -382,7 +396,11 @@ INSERT INTO `pemesanans` (`id_pemesanan`, `id_users`, `Tgl_pemesanan`, `Status`,
 ('P002', 6, '2004-12-23', 'Booked', 80999, 10),
 ('P003', 9, '2024-12-31', 'Canceled', 49999999, 10),
 ('P004', 2, '2024-12-17', 'Booked', 111461110.2, 10),
-('P005', 9, '2024-12-19', 'Booked', 1211559109.2, 10);
+('P005', 9, '2024-12-19', 'Booked', 1211559109.2, 10),
+('P006', 13, '2024-12-18', 'Booked', 1211109109.2, 10),
+('P007', 15, '2024-12-18', 'Booked', 1211109109.2, 10),
+('P008', 18, '2024-12-19', 'Booked', 1211559109.2, 10),
+('P009', 20, '2024-12-19', 'Booked', 111461110.2, 10);
 
 -- --------------------------------------------------------
 
@@ -421,7 +439,25 @@ INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `n
 (11, 'App\\Models\\User', 9, 'Authentication Token', '5317a46e6644a4030f1a43a829b866bdb2aed034442010ccd568d68835e1feb6', '[\"*\"]', '2024-12-17 13:34:08', NULL, '2024-12-17 13:32:12', '2024-12-17 13:34:08'),
 (12, 'App\\Models\\User', 9, 'Authentication Token', '2537ae2eced63b2c7c56e121a4d855b3af61ee3f6440b3d44ba6d32783d0f4d7', '[\"*\"]', '2024-12-17 14:11:38', NULL, '2024-12-17 13:36:21', '2024-12-17 14:11:38'),
 (13, 'App\\Models\\User', 2, 'Authentication Token', 'df1d740b9ea00e91672949b51f06d7c73f0c3c9a9593fd17a7731307203e23e6', '[\"*\"]', '2024-12-17 15:27:13', NULL, '2024-12-17 15:03:10', '2024-12-17 15:27:13'),
-(14, 'App\\Models\\User', 9, 'Authentication Token', '8778bb821729ab136211e47898915dbae768d2edf75ed9e48ffe4eb809c99b79', '[\"*\"]', '2024-12-17 15:37:01', NULL, '2024-12-17 15:27:22', '2024-12-17 15:37:01');
+(14, 'App\\Models\\User', 9, 'Authentication Token', '8778bb821729ab136211e47898915dbae768d2edf75ed9e48ffe4eb809c99b79', '[\"*\"]', '2024-12-17 15:37:01', NULL, '2024-12-17 15:27:22', '2024-12-17 15:37:01'),
+(15, 'App\\Models\\User', 13, 'Authentication Token', '390902328301d7b1293797aed2534c87b7a23fb3903a0ef51ed40dbcfe0849d4', '[\"*\"]', NULL, NULL, '2024-12-17 16:46:22', '2024-12-17 16:46:22'),
+(16, 'App\\Models\\User', 13, 'Authentication Token', '3adcdfedb6b3e9ca1cea2e29145be6fe2fd82b63f58cb117fc4bace0faf25ce9', '[\"*\"]', '2024-12-17 16:50:59', NULL, '2024-12-17 16:47:11', '2024-12-17 16:50:59'),
+(17, 'App\\Models\\User', 14, 'Authentication Token', '4266f1567ce19f9b9c45b3c2405b7e51b8c618f39d41ad7dd5b0544715de867b', '[\"*\"]', '2024-12-17 17:00:54', NULL, '2024-12-17 16:57:28', '2024-12-17 17:00:54'),
+(18, 'App\\Models\\User', 14, 'Authentication Token', 'e72e878da16e1d4c9ffc00ed24a4faf2af83f04bbb6d8969a9273e531ea90c7d', '[\"*\"]', '2024-12-17 17:01:51', NULL, '2024-12-17 17:01:02', '2024-12-17 17:01:51'),
+(19, 'App\\Models\\User', 2, 'Authentication Token', '97b85e0fc34b78afdaa909fcc128c549096e616033f102276c6ca3b5e5dc9b54', '[\"*\"]', '2024-12-17 17:03:22', NULL, '2024-12-17 17:02:23', '2024-12-17 17:03:22'),
+(20, 'App\\Models\\User', 15, 'Authentication Token', '10529adb97f9b5ad8b02df72f3a9e4b2cbbe374f6af786cdbb3d3bd6284bf4b5', '[\"*\"]', '2024-12-17 17:09:36', NULL, '2024-12-17 17:07:19', '2024-12-17 17:09:36'),
+(21, 'App\\Models\\User', 16, 'Authentication Token', 'b4cafe42b868b6c5d31fca52e3e217574ce8b9a26c1d322ed37dfe9c81c5f42e', '[\"*\"]', '2024-12-17 17:13:42', NULL, '2024-12-17 17:12:35', '2024-12-17 17:13:42'),
+(22, 'App\\Models\\User', 17, 'Authentication Token', 'b8318392cbf1eea525f035fd6c531c70a2703a5be3ddeb9644c75e7c22e9eda1', '[\"*\"]', '2024-12-17 17:15:51', NULL, '2024-12-17 17:14:07', '2024-12-17 17:15:51'),
+(23, 'App\\Models\\User', 18, 'Authentication Token', '68738cf356c1625f8de5d946b38ca9d416a85124456fa579ccda5a0aa7ef5cee', '[\"*\"]', '2024-12-17 17:19:56', NULL, '2024-12-17 17:17:53', '2024-12-17 17:19:56'),
+(24, 'App\\Models\\User', 2, 'Authentication Token', 'fba54925d69a7641e4e0c0a4c239eb815340ee5874c6c82b5b168a70fb3067f2', '[\"*\"]', '2024-12-17 17:28:24', NULL, '2024-12-17 17:20:14', '2024-12-17 17:28:24'),
+(25, 'App\\Models\\User', 20, 'Authentication Token', '389e7aa88a4029ab9632447c81c621e1e83852fce36889cf89cf29d97eaba3c3', '[\"*\"]', '2024-12-17 17:35:27', NULL, '2024-12-17 17:33:17', '2024-12-17 17:35:27'),
+(26, 'App\\Models\\User', 21, 'Authentication Token', '3a9b052560a4b7720519e9ced7a1d598bf34abc76f661727439b0c45b238ce10', '[\"*\"]', '2024-12-17 17:54:11', NULL, '2024-12-17 17:54:07', '2024-12-17 17:54:11'),
+(27, 'App\\Models\\User', 21, 'Authentication Token', 'e700034f52bb523d9a9754d5728ed177128ba9fc0e33b22f85cb82cd228830dc', '[\"*\"]', '2024-12-17 17:58:47', NULL, '2024-12-17 17:54:17', '2024-12-17 17:58:47'),
+(28, 'App\\Models\\User', 21, 'Authentication Token', '2532fd978ae2e41552be2f17edbd2cf95b00f584468983732930401118206124', '[\"*\"]', '2024-12-17 17:59:17', NULL, '2024-12-17 17:58:58', '2024-12-17 17:59:17'),
+(29, 'App\\Models\\User', 21, 'Authentication Token', '47ccafa6c9640fedaf13bca202ddd2e6f64795404cf474499931f78cdcf5e418', '[\"*\"]', '2024-12-17 17:59:38', NULL, '2024-12-17 17:59:25', '2024-12-17 17:59:38'),
+(30, 'App\\Models\\User', 21, 'Authentication Token', 'affadeae682d5ca5f4b657aebf5f2358a7acefa6e25f93c5add9d03fd2f2c772', '[\"*\"]', '2024-12-17 18:01:17', NULL, '2024-12-17 17:59:46', '2024-12-17 18:01:17'),
+(31, 'App\\Models\\User', 21, 'Authentication Token', 'c5f89606c40bee707b8860ad3d8b83b4d69ed2df20d11f39bc6d61afd1caf6fd', '[\"*\"]', '2024-12-17 18:02:21', NULL, '2024-12-17 18:01:28', '2024-12-17 18:02:21'),
+(32, 'App\\Models\\User', 21, 'Authentication Token', '4c365484120739defc4bc00d1a25060f2ffea8c2d9002ef5954dc2469bf4da42', '[\"*\"]', '2024-12-17 18:02:30', NULL, '2024-12-17 18:02:29', '2024-12-17 18:02:30');
 
 -- --------------------------------------------------------
 
@@ -446,7 +482,13 @@ INSERT INTO `services` (`id_pemesanan`, `id_services`, `Time-Jumlah`) VALUES
 ('P004', 'JS002', 10),
 ('P004', 'JS004', 10),
 ('P005', 'JS001', 10),
-('P005', 'JS002', 10);
+('P005', 'JS002', 10),
+('P006', 'JS001', 10),
+('P007', 'JS001', 10),
+('P008', 'JS001', 10),
+('P008', 'JS002', 10),
+('P009', 'JS002', 10),
+('P009', 'JS004', 10);
 
 -- --------------------------------------------------------
 
@@ -468,7 +510,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('mlxoaBXZAsONUrDk1rcjCEzXeXgI4LWxKdG3ISPD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWFBJTGdBdGFhVWJ1QzFORW5ycW51Zzlxa1AzeFg0dmJFT2VyVWlnVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1734475026);
+('mlxoaBXZAsONUrDk1rcjCEzXeXgI4LWxKdG3ISPD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWFBJTGdBdGFhVWJ1QzFORW5ycW51Zzlxa1AzeFg0dmJFT2VyVWlnVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1734483749),
+('pziHmzh8wuZeJezgKXTzJmcxmlyV2R7kvCIOgO0t', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiY2hvTjJ6cElLT3ZkU1pxekxtYjFST0ttenJpM1VrUXpiQ1NOTUdNeSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9IZWxwIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1734483556);
 
 -- --------------------------------------------------------
 
@@ -501,7 +544,16 @@ INSERT INTO `users` (`id_user`, `name`, `email`, `noTelp`, `email_verified_at`, 
 (6, 'ikan', 'ikan@ikan.com', '123234545676890', NULL, '$2y$12$qvfVK0Ygbqr4oBVo12xja.dM61Mbb6fimrV3THFMEAe9E0TCgri1W', NULL, 1, NULL),
 (7, 'ffafa', 'lekong@gmail.com', '0987654321', NULL, '$2y$12$gJaeUzGDmQrCbiigpkBDOOB/7Jidc2u2q8gZH85J55EwQv64Ux/nW', NULL, 0, '4f9fV0ikTQLlvN7VNidA6W5gcgK6ZYj7MT4XdLmW.png'),
 (9, 'admin@admin.com', 'babi@gmail.com', '3333345454', NULL, '$2y$12$SMmF4aqPWsXYgwABQBlhX.xsJ31l7jQEs4q3v/SRpa5mcIqUCx/du', NULL, 0, 'xZkGeyaWXau6a6PvBKlwUD5bUSNqIEZxsXllJypa.png'),
-(11, 'tata', 'orang@gmail.com', '1234567890', NULL, '$2y$12$LX5lKpFagWunSVsQgwXuAeHbODOH3wtOFqYL2j2MnnmA05QS.RaBu', NULL, 0, 'WcHE1uDfSYeVteUFaqEfqgb7eT4FwVtps4UiKAAl.png');
+(11, 'tata', 'orang@gmail.com', '1234567890', NULL, '$2y$12$LX5lKpFagWunSVsQgwXuAeHbODOH3wtOFqYL2j2MnnmA05QS.RaBu', NULL, 0, 'WcHE1uDfSYeVteUFaqEfqgb7eT4FwVtps4UiKAAl.png'),
+(13, 'ewdsffqadsf', 'burung@gmail.com', '133456712345', NULL, '$2y$12$qmmsIWDzhWIIR6LVCmIvkeLJbbHcwjSWuDAjl.DgN7M/TqTT6km8q', NULL, 0, 'A5kB1LyMzJGea7bN6DImQQg7UXBGVoOegmI0N2Pa.png'),
+(14, 'fsgd', 'burung2@gmail.com', '12334546768789', NULL, '$2y$12$JtzSu.GNBKaJ9I/F1TUDVO03dq3N1zhfCpXJUz9bJtcIiHW/RWS6a', NULL, 0, '6nej0ZQvYVd6OiYbh93sfEP39xqG5YiSrp1Pfluc.png'),
+(15, 'aifoawwam', 'hehe@gmail.com', '23456789121', NULL, '$2y$12$0i.RuRU7v30PvZfVhmtrLuBqSLiNxHfkhJ8ZSSX//8V/7BI0wtBVC', NULL, 0, '34JxRPeAjejDDCXei58GLIWOQxSS5loJWZz6dRlb.png'),
+(16, 'samuell', 'samuell@gmail.com', '08987654321', NULL, '$2y$12$tXGcZni03kbo7t1Bxy9xG.iUNQIvbLeJWU60bQywEjCfgMQq/ueS.', NULL, 0, NULL),
+(17, 'yesyes', 'yes@gmail.com', '08214121321', NULL, '$2y$12$D7CYMrZ6yEvmMmHLK44zfuOoyUjLyTHbbAluZSuWqRzHJxePCewBC', NULL, 0, NULL),
+(18, 'eheheh', 'ehehehe@gmail.com', '08413213121', NULL, '$2y$12$xDd94ftcqlNid9L84xIW5uwNm.5M7KSK5XYK5xY57vkJmGPISjRPW', NULL, 0, 'RBZS4n4c9p1ZXJN385z9MeoZ4NwvcyKK0nJGdz7Q.png'),
+(19, 'adfsgf', 'orangP@gmail.com', '12345677899', NULL, '$2y$12$gaIPhOVzyy.LF1zQ5yeG..lzVTAmaATj.Xr1xgthn3sxr5NSmqMSW', NULL, 0, 'tFv8Fynm4ddkLug4QzKpITSQBUpcxTIJwV3q2UIo.png'),
+(20, 'dawdawww', 'ikangoreng@gmail.com', '08312311212', NULL, '$2y$12$dh/XbK/cV6a9Dem2P39Ch.wH/yKpVuOHKUYvBbPkt3g6dLT6DTozy', NULL, 0, 'lgwAVPrGGfBmJvWJVUGgsGpjuQQfIuCZtffUuOu2.png'),
+(21, 'fafwafa', 'ayam@gmail.com', '1231312131', NULL, '$2y$12$shmTAHrvvmZyd3hswzVTZOKDFv6HUvvIffNaiklCKYd20wMkRf.Jm', NULL, 0, 'SzIoLUbzJdMPO3ljN07UFYYn28yel123QZGMl7JS.png');
 
 --
 -- Indexes for dumped tables
@@ -669,13 +721,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
