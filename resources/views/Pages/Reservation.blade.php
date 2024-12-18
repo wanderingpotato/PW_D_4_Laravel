@@ -219,7 +219,7 @@
 				'Time-Jumlah':10
 			})),
 		};
-		console.log('Submitting booking:', JSON.stringify(bookingData));
+		console.log('Submitting pesanan:', JSON.stringify(bookingData));
 		const token = localStorage.getItem('token');
 		fetch('/api/Pemesanan', {
 				method: 'POST',
@@ -232,16 +232,16 @@
 			.then(response => response.json())
 			.then(data => {
 				console.log('Server response:', data);
-				if (data.message === 'Booking Added Successfully') {
-					alert('Booking successful!');
+				if (data.message === 'Pemesanan Added Successfully') {
+					alert('pesanan successful!');
 				} else {
 					console.error('Error:', data);
-					alert('Booking failed: ' + JSON.stringify(data.message));
+					alert('pesanan failed: ' + JSON.stringify(data.message));
 				}
 			})
 			.catch(error => {
 				console.error('Fetch error:', error);
-				alert('An error occurred during booking.');
+				alert('An error occurred during pesanan.');
 			});
 	}
 	function updatePagination(paginationData) {

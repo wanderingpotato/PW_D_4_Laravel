@@ -45,12 +45,12 @@
 
 		<div class="d-none d-md-flex  container mx-auto bg-white position-absolute z-3 rounded row g-3 align-items-center justify-content-center px-5" style="   position: absolute; right: 0;bottom: -5rem; height:10rem ;left: 0; ">
 			<div class="col-md-5 mt-0">
-				<label for="inputEmail4" class="form-label">Select Date</label>
-				<input type="date" class="form-control" id="inputEmail4">
+				<label for="inputEmail4" class="form-label">Select Checkin</label>
+				<input type="date" class="form-control" id="Checkin">
 			</div>
 			<div class="col-md-5 mt-0">
-				<label for="inputPassword4" class="form-label">Number of room</label>
-				<input type="Text" class="form-control" id="inputPassword4">
+				<label for="inputEmail4" class="form-label">Select Checkout</label>
+				<input type="date" class="form-control" id="Checkout">
 			</div>
 			<div class="col-md-2 mt-0">
 				<a href="{{url('Booking')}}">

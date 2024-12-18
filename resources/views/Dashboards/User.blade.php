@@ -64,7 +64,7 @@
 					<div class="modal-body">
 						<div class="mb-3">
 							<label for="Username" class="form-label">Username</label>
-							<input type="text" class="form-control" id="Username" name="name" placeholder="input Username">
+							<input type="text" class="form-control" id="Username" name="name" placeholder="input Username" autocomplete="off">
 						</div>
 						<div class="mb-3">
 							<label for="Email" class="form-label">Email</label>
@@ -76,7 +76,7 @@
 						</div>
 						<div class="mb-3">
 							<label for="Password" class="form-label">Password</label>
-							<input type="password" class="form-control" id="Password" name="password" placeholder="input password">
+							<input type="password" class="form-control" id="Password" name="password" placeholder="input password" autocomplete="new-password">
 						</div>
 						<div class="mb-3">
 							<label for="formFile" class="form-label">Foto</label>
@@ -116,7 +116,7 @@
 						</div>
 						<div class="mb-3">
 							<label for="Password" class="form-label">Password</label>
-							<input type="password" class="form-control" id="PasswordUpdate" name="password" placeholder="input password">
+							<input type="password" class="form-control" id="PasswordUpdate" name="password" placeholder="input password" autocomplete="new-password">
 						</div>
 						<div class="mb-3">
 							<label for="formFile" class="form-label">Foto</label>

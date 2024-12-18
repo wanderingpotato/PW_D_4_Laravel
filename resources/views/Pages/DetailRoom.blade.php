@@ -60,7 +60,7 @@
 			.then(data => {
 				const select = document.getElementById('imagesData');
 				data.data.forEach(galeri => {
-					const row = `<img src="/storage/Galery/${galeri.foto}" class="card-img-top img-fluid" alt="...">`;
+					const row = `<img src="/storage/Galery/${galeri.foto}" class="card-img-top img-fluid" alt="..." style="width: 380px; height: 250px; object-fit: cover;">`;
 					select.innerHTML += row;
 				});
 			})

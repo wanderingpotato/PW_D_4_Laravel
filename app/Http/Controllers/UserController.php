@@ -259,9 +259,6 @@ class UserController extends Controller
         if ($validate->fails()) {
             return response(['message' => $validate->errors()], 400);
         }
-        if ($request->has('password')  && $request->password != null) {
-            $updateData['password'] = bcrypt($request->password);
-        }
         if ($request->hasFile('foto')) {
             $uploadFolder = 'Profile';
             $image = $request->file('foto');

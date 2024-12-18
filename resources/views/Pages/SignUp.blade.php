@@ -47,6 +47,7 @@
 </div>
 <script>
 	document.getElementById('registerForm').addEventListener('submit', function(e) {
+		e.preventDefault();
 		const formData = new FormData(this);
 		fetch('/api/register', {
 				method: 'POST',

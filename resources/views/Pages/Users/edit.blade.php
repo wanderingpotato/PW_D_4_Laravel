@@ -10,7 +10,7 @@
 			<form id="updateForm" class="mt-2 mx-5" enctype="multipart/form-data"  autocomplete="off">
 				<div class="mb-3">
 					<label for="username" class="form-label fw-bold fs-5">Username</label>
-					<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="username" name="name" placeholder="Input Your Username.....">
+					<input type="text" class="form-control p-3 border-info rounded-3 shadow" id="username" name="name" placeholder="Input Your Username....."  autocomplete="off" >
 				</div>
 				<div class="mb-3">
 					<label for="phoneNumber" class="form-label fw-bold fs-5">Phone Number</label>
@@ -22,7 +22,7 @@
 				</div>
 				<div class="mb-3">
 					<label for="password" class="form-label fw-bold fs-5">Password</label>
-					<input type="password" class="form-control p-3 border-info rounded-3 shadow" id="password" name="password" placeholder="Input Your Password.....">
+					<input type="password" class="form-control p-3 border-info rounded-3 shadow" id="password" name="password" placeholder="Input Your Password....."  autocomplete="new-password" >
 				</div>
 				<div class="mb-3">
 					<label for="foto" class="form-label fw-bold fs-5">Foto</label>

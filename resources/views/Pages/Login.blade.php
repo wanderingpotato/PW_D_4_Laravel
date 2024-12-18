@@ -43,6 +43,7 @@
 <script>
 	const form = document.getElementById('loginForm');
 	form.addEventListener('submit', function(e) {
+		e.preventDefault();
 		const email = document.getElementById('formGroupExampleInput').value;
 		const password = document.getElementById('formGroupExampleInput2').value;
 		fetch('/api/login', {
