@@ -3,8 +3,8 @@
 
 anggota Kelompok : 
 - I Wayan Yudistira Wirjananta ( 220711793 ) - Backend & integrasi
-- Samuel Chandra Wijaya - Design
-- Mukti Laksono - FrontEnd.
+- Samuel Chandra Wijaya (220711794) - Design
+- Mukti Laksono (220711693)- FrontEnd.
 
 ## Username & Password
 
@@ -17,8 +17,6 @@ User :
 - 123456789
 
 ## Bonus Yang Di ambil
-Hosting:
-
 Route API:
 karena minta semuanya yaudah
 -  Post /api/register - register pengguna
