@@ -46,7 +46,7 @@ karena minta semuanya yaudah
 -  get /api/Pemesanan' - mengambil Pemesanan tanpa pagination
 -  get /api/Pemesanan/all'- mengambil Pemesanan tanpa pagination
 -  get /api/Pemesanan/Count' - mengambil hitungan banyaknya data pesanan
--  get /api/Pemesanan/{id}' - mengambil kamar kamar spesifik
+-  get /api/Pemesanan/{id}' - mengambil Pemesanan spesifik
 -  post /api/EditUser' - edit user
 -  post /api/logout' - logout
 -  get /api/BookingPesanan' - combine antara data booking dan pesanan dimana status Booked
@@ -54,40 +54,40 @@ karena minta semuanya yaudah
 -  get /api/Booking/User/Count' - hitung jumlah booking 
 -  post /api/Booking' - create booking (user)
 -  post /api/Booking/dashboard' - create booking (dashboard)
--  post /api/Booking/{id}'
--  post /api/Booking/dashboard/{id}'
--  get /api/Booking/user/{id}'
--  get /api/Booking/user'
--  delete /api/Booking/{id}'
--  post /api/Fasilitas'
--  post /api/Fasilitas/{id}'
--  get /api/Fasilitas/user/{id}'
--  delete /api/Fasilitas/{id}'
--  post /api/Galery'
--  post /api/Galery/{id}'
--  get /api/Galery/user/{id}'
--  delete /api/Galery/{id}'
--  post /api/JenisKamar/addFasilitas'
--  post /api/JenisKamar'
--  post /api/JenisKamar/{id}'
--  get /api/JenisKamar/user/{id}'
--  delete /api/JenisKamar/{id}'
--  post /api/JenisService'
--  post /api/JenisService/{id}'
--  get /api/JenisService/user/{id}'
--  delete /api/JenisService/{id}'
--  post /api/Kamar'
--  post /api/Kamar/{id}'
--  get /api/Kamar/user/{id}'
--  delete /api/Kamar/{id}'
--  post /api/Pemesanan'
--  post /api/Pemesanan/dashboard'
--  post /api/Pemesanan/{id}'
--  post /api/Pemesanan/dashboard/{id}'
--  get /api/Pemesanan/user/{id}'
--  delete /api/Pemesanan/{id}'
--  get /api/Pemesanan/User/Count'
--  get /api/Pemesanan/user' 
+-  post /api/Booking/{id}' - update data booking
+-  post /api/Booking/dashboard/{id}' - update data booking
+-  get /api/Booking/user/{id}' - ngambil booking sesuai user id
+-  get /api/Booking/user'- ngambil booking sesuai user auth
+-  delete /api/Booking/{id}' - delete booking
+-  post /api/Fasilitas' - create fasilitas
+-  post /api/Fasilitas/{id}' -update fasilitas
+-  get /api/Fasilitas/user/{id}' - get fasilitas berdasarkan user id
+-  delete /api/Fasilitas/{id}' - delete fasilitas
+-  post /api/Galery' - create galeri
+-  post /api/Galery/{id}' - update galeri
+-  get /api/Galery/user/{id}' - get galeri berdasarkan user id
+-  delete /api/Galery/{id}' - delete galeri
+-  post /api/JenisKamar/addFasilitas' - menambahkan fasilitas ke jenis kamar
+-  post /api/JenisKamar' - create jenis kamar
+-  post /api/JenisKamar/{id}' - update jenis kamar
+-  get /api/JenisKamar/user/{id}' - ambil jenis kamar berdasarkan user id
+-  delete /api/JenisKamar/{id}'  - delete jenis kamar
+-  post /api/JenisService' - create jenis service
+-  post /api/JenisService/{id}' - update jenis service
+-  get /api/JenisService/user/{id}' - get jenis service berdasarkan user id
+-  delete /api/JenisService/{id}' - delete jenis service
+-  post /api/Kamar' - create kamar
+-  post /api/Kamar/{id}' - update kamar
+-  get /api/Kamar/user/{id}' - get kamar berdasarkan user id
+-  delete /api/Kamar/{id}' - delete kamar
+-  post /api/Pemesanan' - create pesanan (user)
+-  post /api/Pemesanan/dashboard' - create pesanan (dashboard)
+-  post /api/Pemesanan/{id}' - update pesanan
+-  post /api/Pemesanan/dashboard/{id}' = update pesanan(dashboard)
+-  get /api/Pemesanan/user/{id}' - get pesanan berdasarkan user id
+-  delete /api/Pemesanan/{id}' - delete pesanan
+-  get /api/Pemesanan/User/Count' - get total count pesanan yang dimiliki user
+-  get /api/Pemesanan/user' - mengambil pesanan berdasakan user auth
 -  get /api/User' - mengambil User tanpa pagination
 -  get /api/User/all' - mengambil User tanpa pagination
 -  get /api/User/Count' - menghitung jumlah data user
