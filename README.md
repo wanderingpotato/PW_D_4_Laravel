@@ -173,81 +173,101 @@ The examples below assume the Laravel application is running locally on port `80
 | GET | `/User/Count` | Retrieve the total user count |
 | GET | `/UserData` | Retrieve the authenticated user's data |
 | GET | `/User/user/{id}` | Retrieve user-related data; confirm the exact behavior in the implementation |
-|
-Getting Started
+| POST | `/User` | Create a user through the dashboard |
+| POST | `/User/{id}` | Update a user through the dashboard |
+| POST | `/EditUser` | Edit user information |
+| POST | `/UserEditData` | Update the authenticated user's information |
+| DELETE | `/User/{id}` | Delete a user |
 
-Prerequisites
+## Getting Started
+
+### Prerequisites
 
 Before running the application, ensure that you have installed:
 
-PHP compatible with the Laravel version used by the project.
+- PHP compatible with the Laravel version used by the project.
+- Composer.
+- Node.js and npm.
+- MySQL or another database supported by the application.
 
-Composer.
+### Installation
 
-Node.js and npm.
+**1. Clone the repository**
 
-MySQL or another database supported by the application.
-
-Installation
-
-1. Clone the repository
-
+```bash
 git clone <repository-url>
 cd <repository-directory>
+```
 
 Replace the placeholders with your actual GitHub repository URL and directory name.
 
-2. Install PHP dependencies
+**2. Install PHP dependencies**
 
+```bash
 composer install
+```
 
-3. Install frontend dependencies
+**3. Install frontend dependencies**
 
+```bash
 npm install
+```
 
-4. Configure environment variables
+**4. Configure environment variables**
 
-Create a local .env file using .env.example as a reference.
+Create a local `.env` file using `.env.example` as a reference.
 
+```bash
 cp .env.example .env
+```
 
-Configure your local database connection in .env. Use your own local database credentials.
+Configure your local database connection in `.env`. Use your own local database credentials.
 
-5. Generate the Laravel application key
+**5. Generate the Laravel application key**
 
+```bash
 php artisan key:generate
+```
 
-6. Create the database
+**6. Create the database**
 
-Create an empty database for the application and configure its name and credentials in .env.
+Create an empty database for the application and configure its name and credentials in `.env`.
 
-7. Run database migrations
+**7. Run database migrations**
 
+```bash
 php artisan migrate
+```
 
 If the project requires initial data, use the project's available seeders after reviewing their contents:
 
+```bash
 php artisan db:seed
+```
 
 Only run the seeder command if the project includes appropriate seeders.
 
-8. Build frontend assets
+**8. Build frontend assets**
 
 For development:
 
+```bash
 npm run dev
+```
 
-9. Start the Laravel development server
+**9. Start the Laravel development server**
 
 In a separate terminal:
 
+```bash
 php artisan serve
+```
 
 The Laravel application will normally be available at:
 
-http://localhost:8000
+`http://localhost:8000`
 
-Demo Accounts
+## Demo Accounts
 
 The original development database contained test account credentials. For security, this public README does not publish those passwords.
 
@@ -255,26 +275,21 @@ To test the application, configure local demo accounts using the project's regis
 
 Use fictional credentials that are not reused for personal accounts.
 
-Notes on API Usage
+## Notes on API Usage
 
-Endpoint behavior is based on the project's original endpoint list.
+- Endpoint behavior is based on the project's original endpoint list.
+- Some endpoints may require authentication.
+- Endpoints that accept an `{id}` parameter require the corresponding record identifier.
+- POST endpoints may require JSON, form data, or multipart form data depending on their implementation.
+- The exact request fields, response structures, validation rules, and authentication requirements should be verified against the source code.
+- Endpoint names preserve the original capitalization. Depending on the server and routing configuration, case sensitivity may matter.
+- Pagination behavior may differ between endpoints, even where similar endpoint names are used.
 
-Some endpoints may require authentication.
-
-Endpoints that accept an {id} parameter require the corresponding record identifier.
-
-POST endpoints may require JSON, form data, or multipart form data depending on their implementation.
-
-The exact request fields, response structures, validation rules, and authentication requirements should be verified against the source code.
-
-Endpoint names preserve the original capitalization. Depending on the server and routing configuration, case sensitivity may matter.
-
-Pagination behavior may differ between endpoints, even where similar endpoint names are used.
-
-Project Structure
+## Project Structure
 
 The repository follows a Laravel application structure, with key directories including:
 
+```text
 .
 ├── app/
 ├── bootstrap/
@@ -290,21 +305,22 @@ The repository follows a Laravel application structure, with key directories inc
 ├── composer.json
 ├── package.json
 └── README.md
+```
 
 The exact contents may vary depending on the current version of the project.
 
-Contributions
+## Contributions
 
 This project was developed collaboratively by the members of Class D, Group 4, as part of a university course.
 
 Each member contributed to a different part of the project, including backend development, integration, design, and frontend implementation.
 
-Disclaimer
+## Disclaimer
 
 This project was created for educational purposes. It is intended to demonstrate web development, backend integration, database management, and REST API implementation.
 
 Before using the application in a production environment, review its authentication, authorization, input validation, error handling, and security configuration.
 
-License
+## License
 
 No license has been specified yet. Unless a license is added to the repository, others should not assume they have permission to reuse, modify, or redistribute the code.
